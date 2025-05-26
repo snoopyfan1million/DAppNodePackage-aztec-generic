@@ -1,2 +1,7 @@
-# DAppNodePackage-aztec-generic
-Wrapper package for the Aztec Testnet.
+# DAppNodePackage Aztec
+
+## Aztec
+
+Wrapper package for the Aztec.
+
+![avatar](avatar-aztec.png)

@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+  sequencer:
+    build:
+      context: sequencer
+      args:
+        UPSTREAM_VERSION: 0.87.2
+        DATA_DIRECTORY: /data
+    volumes:
+      - sequencer-data:/data
+    environment:
+      COINBASE: ""
+      VALIDATOR_PRIVATE_KEY: ""
+      BLOB_SINK_URL: ""
+      SEQ_MIN_TX_BLOCK: ""
+      SEQ_MAX_TX_BLOCK: ""
+    restart: unless-stopped
+  register:
+    build:
+      context: register
+      args:
+        UPSTREAM_VERSION: 0.87.2
+    environment:
+      VALIDATOR_PRIVATE_KEY: ""
+      COINBASE: ""
+    restart: "no"
+volumes:
+  sequencer-data: {}

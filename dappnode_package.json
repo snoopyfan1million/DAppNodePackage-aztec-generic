@@ -1,0 +1,36 @@
+{
+  "upstream": [
+    {
+      "repo": "AztecProtocol/aztec-packages",
+      "version": "v0.87.2",
+      "arg": "UPSTREAM_VERSION"
+    }
+  ],
+  "description": "Aztec is a privacy first L2 on Ethereum",
+  "type": "service",
+  "architectures": ["linux/amd64"],
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "categories": ["Blockchain", "ETH2.0"],
+  "keywords": ["aztec", "validator", "rollup", "privacy"],
+  "links": {
+    "homepage": "https://aztec.network",
+    "readme": "https://github.com/DAppNode/DAppNodePackage-aztec-generic#readme",
+    "docs": "https://docs.aztec.network"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DAppNode/DAppNodePackage-aztec-generic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-aztec-generic/issues"
+  },
+    "globalEnvs": [
+    {
+      "envs": [
+        "PUBLIC_IP"
+      ],
+      "services": ["sequencer"]
+    }
+  ]
+}

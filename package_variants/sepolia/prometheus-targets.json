@@ -1,0 +1,11 @@
+[
+    {
+        "labels": {
+            "package": "aztec-sepolia.dnp.dappnode.eth",
+            "service": "sequencer.aztec-sepolia.dappnode"
+        },
+        "targets": [
+            "sequencer.aztec-sepolia.dappnode:8080"
+        ]
+    }
+]

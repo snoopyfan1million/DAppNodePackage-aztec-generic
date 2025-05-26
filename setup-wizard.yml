@@ -1,0 +1,47 @@
+version: "2"
+fields:
+
+  - id: ethereum_hosts
+    target:
+      type: environment
+      name: ETHEREUM_HOSTS
+      service: sequencer
+    title: Ethereum RPC Hosts
+    description: "One or more comma-separated public rpc provider url(s)"
+    required: true
+    pattern: '^https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?(,https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)*$'
+    patternErrorMessage: "Please enter one or more valid comma-separated URLs (e.g., http://geth.sepolia-geth.dappnode:8545)"
+
+  - id: l1_consensus_host_urls
+    target:
+      type: environment
+      name: L1_CONSENSUS_HOST_URLS
+      service: sequencer
+    title: L1 Consensus Host URLs
+    description: "One or more comma-separated public rpc provider url(s) that supports consensus client requests"
+    required: true
+    pattern: '^https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?(,https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)*$'
+    patternErrorMessage: "Please enter one or more valid comma-separated URLs (e.g., http://prysm-sepolia.dappnode:3500)"
+
+  - id: validator_private_key
+    target:
+      type: environment
+      name: VALIDATOR_PRIVATE_KEY
+      service: [sequencer, register]
+    title: Validator Private Key
+    description: "Private key of testnet L1 EOA that holds Sepolia ETH (0.01 Sepolia ETH can get you started)"
+    required: true
+    secret: true
+    pattern: '^0x[a-fA-F0-9]{64}$'
+    patternErrorMessage: "Please enter a valid private key (0x followed by 64 hexadecimal characters)"
+
+  - id: coinbase
+    target:
+      type: environment
+      name: COINBASE
+      service: [sequencer, register]
+    title: Coinbase Address
+    description: "Recipient of block rewards (for node security on mainnet, this should be a different address to the validator eoa)"
+    required: true
+    pattern: '^0x[a-fA-F0-9]{40}$'
+    patternErrorMessage: "Please enter a valid Ethereum address (0x followed by 40 hexadecimal characters)"
