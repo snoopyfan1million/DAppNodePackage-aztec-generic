@@ -25,5 +25,14 @@ FLAGS=(
 # Log final command for visibility
 echo "[INFO - entrypoint] Running: node /usr/src/yarn-project/aztec/dest/bin/index.js ${FLAGS[*]}"
 
-# Execute command safely
-exec node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js "${FLAGS[@]}"
+# Retry logic
+while true; do
+  # Execute command safely
+  if node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js "${FLAGS[@]}"; then
+    echo "[INFO - entrypoint] Validator registration successful."
+    break
+  else
+    echo "[ERROR - entrypoint] Validator registration failed. Retrying in 24 hours..."
+    sleep 24h
+  fi
+done
