@@ -16,7 +16,7 @@ jobs:
     if: github.event_name != 'push'
     steps:
       - uses: actions/checkout@v4
-      - run: npx @dappnode/dappnodesdk build --variant mainnet --skip_save
+      - run: npx @dappnode/dappnodesdk build --variant sepolia --skip_save
 
   # e2e-test:
   #   runs-on: mainnet
