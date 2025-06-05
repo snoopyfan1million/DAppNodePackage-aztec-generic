@@ -8,6 +8,10 @@ For detailed instructions about Aztec Protocol, please refer to the [Aztec docum
 
 The Aztec Sequencer Node requires a synced Ethereum node, depending on the network. The execution layer & consensus layer API endpoints must be provided in the package configuration, like `http://geth.sepolia-geth.dappnode:8545` and `http://prysm-sepolia.dappnode:3500` 
 
+For Sepolia:
+- [Install Prysm](http://my.dappnode/installer/dnp/prysm-sepolia.dnp.dappnode.eth)
+- [Install Geth](http://my.dappnode/installer/dnp/sepolia-geth.dnp.dappnode.eth)
+
 
 ### Package Details
 
