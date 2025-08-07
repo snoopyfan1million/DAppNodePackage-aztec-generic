@@ -10,10 +10,3 @@ services:
     ports:
       - 40400:40400/tcp
       - 40400:40400/udp
-  register:
-    build:
-      args:
-        L1_CHAIN_ID: 11155111
-        STAKING_ASSET_HANDLER: "0xF739D03e98e23A7B65940848aBA8921fF3bAc4b2"
-    environment:
-      ETHEREUM_HOSTS: http://geth.sepolia-geth.dappnode:8545
