@@ -10,19 +10,9 @@ services:
       - sequencer-data:/data
     environment:
       COINBASE: ""
-      VALIDATOR_PRIVATE_KEY: ""
+      VALIDATOR_PRIVATE_KEYS: ""
       BLOB_SINK_URL: ""
-      SEQ_MIN_TX_BLOCK: ""
-      SEQ_MAX_TX_BLOCK: ""
+      LOG_LEVEL: "info"
     restart: unless-stopped
-  register:
-    build:
-      context: register
-      args:
-        UPSTREAM_VERSION: 1.2.1
-    environment:
-      VALIDATOR_PRIVATE_KEY: ""
-      COINBASE: ""
-    restart: "no"
 volumes:
   sequencer-data: {}

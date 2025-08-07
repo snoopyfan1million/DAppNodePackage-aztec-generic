@@ -23,11 +23,11 @@ fields:
     pattern: '^https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?(,https?://[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)*$'
     patternErrorMessage: "Please enter one or more valid comma-separated URLs (e.g., http://prysm-sepolia.dappnode:3500)"
 
-  - id: validator_private_key
+  - id: VALIDATOR_PRIVATE_KEYS
     target:
       type: environment
-      name: VALIDATOR_PRIVATE_KEY
-      service: [sequencer, register]
+      name: VALIDATOR_PRIVATE_KEYS
+      service: [sequencer]
     title: Validator Private Key
     description: "Private key of testnet L1 EOA that holds Sepolia ETH (0.01 Sepolia ETH can get you started)"
     required: true
@@ -39,7 +39,7 @@ fields:
     target:
       type: environment
       name: COINBASE
-      service: [sequencer, register]
+      service: [sequencer]
     title: Coinbase Address
     description: "Recipient of block rewards (for node security on mainnet, this should be a different address to the validator eoa)"
     required: true
