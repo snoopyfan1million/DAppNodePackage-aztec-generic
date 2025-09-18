@@ -18,6 +18,18 @@ FLAGS=(
   start
   --network "$NETWORK"
 )
+# — Download snapshot only if empty
+if [ -z "$(ls -A /data/aztec-alpha-testnet.tar.lz4)" ]; then
+    echo "[INFO - entrypoint] Target folder is empty, downloading snapshot..."
+    wget https://files5.blacknodes.net/aztec/aztec-alpha-testnet.tar.lz4 -O /data/aztec-alpha-testnet.tar.lz4
+    lz4 -d /data/aztec-alpha-testnet.tar.lz4 /data/aztec-alpha-testnet.tar
+    tar -xvf /data/aztec-alpha-testnet.tar -C /
+    rm /data/aztec-alpha-testnet.tar
+    echo "[INFO - entrypoint] Snapshot download and extraction completed"
+else
+    echo "[INFO - entrypoint] Target folder is not empty, skipping snapshot download"
+fi
+
 
 # — Append fixed mode flags
 FLAGS+=(--archiver --node --sequencer)
