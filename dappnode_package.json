@@ -1,34 +1,19 @@
 {
-  "upstream": [
-    {
-      "repo": "AztecProtocol/aztec-packages",
-      "version": "1.2.1",
-      "arg": "UPSTREAM_VERSION"
-    }
-  ],
-  "description": "Aztec is a privacy first L2 on Ethereum",
-  "type": "service",
-  "architectures": ["linux/amd64"],
-  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
-  "categories": ["Blockchain", "ETH2.0"],
-  "keywords": ["aztec", "validator", "rollup", "privacy"],
-  "links": {
-    "homepage": "https://aztec.network",
-    "readme": "https://github.com/DAppNode/DAppNodePackage-aztec-generic#readme",
-    "docs": "https://docs.aztec.network"
+  "name": "sequencer.aztec-testnet.dnp.dappnode.eth",
+  "version": "2.0.2",
+  "description": "Aztec Sequencer Node - Testnet v2.0.2",
+  "image": {
+    "version": "2.0.2",
+    "hash": "",
+    "size": 0,
+    "restart": "unless-stopped",
+    "subnet": "172.33.0.0/16",
+    "ipv4_address_static": "172.33.1.7"
   },
-  "license": "Apache-2.0",
+  "author": "snoopyfan",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DAppNode/DAppNodePackage-aztec-generic.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-aztec-generic/issues"
-  },
-  "globalEnvs": [
-    {
-      "envs": ["PUBLIC_IP"],
-      "services": ["sequencer"]
-    }
-  ]
+    "url": "git+https://github.com/[TU-USERNAME]/DAppNodePackage-aztec-generic.git"
+  }
 }
