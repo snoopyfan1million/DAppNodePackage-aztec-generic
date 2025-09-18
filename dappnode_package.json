@@ -2,6 +2,7 @@
   "name": "sequencer.aztec-testnet.dnp.dappnode.eth",
   "version": "2.0.2",
   "description": "Aztec Sequencer Node - Testnet v2.0.2",
+  "type": "service",
   "image": {
     "version": "2.0.2",
     "hash": "",
@@ -14,6 +15,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snoopyfan/DAppNodePackage-aztec-generic.git"
+    "url": "git+https://github.com/snoopyfan1million/DAppNodePackage-aztec-generic.git"
   }
 }
