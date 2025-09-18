@@ -10,4 +10,3 @@ services:
     ports:
       - 40400:40400/tcp
       - 40400:40400/udp
-      SYNC_SNAPSHOTS_URL: https://aztec.denodes.xyz/snapshot/
